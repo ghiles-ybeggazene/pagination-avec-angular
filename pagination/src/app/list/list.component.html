@@ -1,0 +1,37 @@
+<div class="list-group">
+  <div class="row">
+      <app-item *ngFor="let item of items" [item]=item></app-item>
+    </div>
+  </div>
+
+  <nav aria-label="Page navigation">
+  <ul class="pagination">
+
+    <li [ngClass]="{disabled: page === 1}">
+      <button aria-label="Previous"
+      class="btn btn-default previous"
+      (click)="loadPreviousPage()"
+      [disabled]="page === 1">
+        <span aria-hidden="true">&laquo;</span>
+      </button>
+    </li>
+
+    <li *ngFor="let number of pages"
+      [ngClass]="{active: page === number }">
+      <a (click)="jumpOnPage(number)">
+         {{ number }}
+      </a>
+    </li>
+
+    <li [ngClass]="{disabled: page === pages.length}">
+      <button aria-label="Next"
+        class="btn btn-default next"
+        (click)="loadNextPage()"
+        [disabled]="page === pages.length">
+        <span aria-hidden="true">&raquo;</span>
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<p id="page">Page: {{ page }}</p>

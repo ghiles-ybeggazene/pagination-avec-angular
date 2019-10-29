@@ -1,0 +1,15 @@
+a {
+  cursor: pointer;
+}
+
+#page {
+  text-align: right;
+}
+
+.previous {
+  float: left;
+}
+
+.next {
+  float: right;
+}
